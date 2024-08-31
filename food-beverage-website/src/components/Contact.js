@@ -15,15 +15,7 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post('/api/contact', formData); // Assuming you have a backend endpoint to handle the form submission
-      setStatus('Thank you for your inquiry. We will get back to you soon.');
-    } catch (error) {
-      setStatus('Something went wrong. Please try again later.');
-    }
-  };
+ 
 
   return (
     <div 

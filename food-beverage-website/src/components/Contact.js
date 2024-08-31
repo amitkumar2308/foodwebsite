@@ -1,6 +1,4 @@
-// src/components/ContactUs.js
 import React, { useState } from 'react';
-import axios from 'axios'; // For sending form data
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -8,26 +6,20 @@ const ContactUs = () => {
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
- 
-
   return (
-    <div 
-    
-    id="contact" className="max-w-4xl mx-auto p-6">
+    <div id="contact" className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
       <div className="text-center mb-8">
         <p className="text-lg">For inquiries, please fill out the form below or reach us directly at:</p>
-        <p className="text-xl font-semibold mt-2">Email: thejuniorengineerss@gmail.com</p> {/* Replace with your email */}
-        
+        <p className="text-xl font-semibold mt-2">Email: thejuniorengineerss@gmail.com</p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form className="space-y-6">
         <div>
           <label className="block text-lg font-medium mb-2">Name</label>
           <input
@@ -67,7 +59,6 @@ const ContactUs = () => {
         >
           Send Inquiry
         </button>
-        {status && <p className="mt-4 text-center text-lg">{status}</p>}
       </form>
     </div>
   );
